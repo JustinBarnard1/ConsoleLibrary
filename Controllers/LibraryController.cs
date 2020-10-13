@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Library.Models;
 using Library.Services;
 
 namespace Library.Controllers
@@ -48,7 +49,15 @@ namespace Library.Controllers
         }
         private void Add()
         {
-
+            Console.WriteLine("What is the Title of the Book you wish to add?");
+            string title = Console.ReadLine();
+            Console.WriteLine("Who is the Author of the Book you wish to add?");
+            string author = Console.ReadLine();
+            Console.WriteLine("What is the Description of the Book you wish to add?");
+            string description = Console.ReadLine();
+            Book newBook = new Book(title, author, description);
+            _Service.Add(newBook);
+            Console.WriteLine($"You've successfully added {title} to the library");
         }
 
         private void Read()
@@ -84,7 +93,23 @@ namespace Library.Controllers
 
         private void Delete()
         {
-
+            Console.Write("Which Book would you like to delete: ");
+            string title = Console.ReadLine().ToLower();
+            int index = _Service.FindIndexByTitle(title);
+            if (index == -1)
+            {
+                Console.WriteLine("Book does not exist in Library");
+                return;
+            }
+            Console.WriteLine("Type 'confirm' to remove book");
+            string confirm = Console.ReadLine().ToLower();
+            if (confirm != "confirm")
+            {
+                Console.WriteLine("Invalid input, cannot delete book");
+                return;
+            }
+            _Service.Remove(index);
+            Console.WriteLine("Successfully removed Book");
         }
     }
 }
