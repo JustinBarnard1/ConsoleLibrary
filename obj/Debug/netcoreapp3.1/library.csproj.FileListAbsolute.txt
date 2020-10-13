@@ -1,0 +1,13 @@
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.exe
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.deps.json
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.runtimeconfig.json
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.runtimeconfig.dev.json
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.dll
+C:\source\codeworks\fall2020\week9\csharpday2\library\bin\Debug\netcoreapp3.1\library.pdb
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.csprojAssemblyReference.cache
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.AssemblyInfoInputs.cache
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.AssemblyInfo.cs
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.csproj.CoreCompileInputs.cache
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.dll
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.pdb
+C:\source\codeworks\fall2020\week9\csharpday2\library\obj\Debug\netcoreapp3.1\library.genruntimeconfig.cache

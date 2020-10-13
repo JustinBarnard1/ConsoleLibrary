@@ -1,10 +1,13 @@
 using System;
+using System.Threading;
+using Library.Services;
 
 namespace Library.Controllers
 {
     class LibraryController
     {
-        private bool _running { get; set; }
+        private LibraryService _Service { get; set; } = new LibraryService();
+        private bool _running { get; set; } = true;
 
         public void Run()
         {
@@ -16,7 +19,7 @@ namespace Library.Controllers
 
         private void GetUserInput()
         {
-            Console.WriteLine("Options:\nAdd, Info, Checkout, Dropoff, Delete, Quit \nWhat would you like to do:");
+            Console.WriteLine("Options:\nAdd, Info, Checkout, return, Delete, Quit \nWhat would you like to do:");
             string input = Console.ReadLine().ToLower();
             switch (input)
             {
@@ -48,19 +51,35 @@ namespace Library.Controllers
 
         }
 
-        private void Info()
+        private void Read()
         {
 
         }
 
         private void Checkout()
         {
-
+            Console.WriteLine(_Service.GetBooks(true));
+            Console.Write("Enter the number of the book to checkout:");
+            string inputStr = Console.ReadLine();
+            if (int.TryParse(inputStr, out int index) && index > 0)
+            {
+                Console.WriteLine(_Service.Checkout(index - 1));
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
         }
 
         private void Return()
         {
-
+            Console.WriteLine(_Service.GetBooks(false));
+            Console.Write("Enter the number of the book to return:");
+            string inputStr = Console.ReadLine();
+            if (int.TryParse(inputStr, out int index) && index > 0)
+            {
+                Console.WriteLine(_Service.Return(index - 1));
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
         }
 
         private void Delete()

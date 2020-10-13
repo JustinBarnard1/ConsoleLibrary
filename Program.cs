@@ -1,4 +1,5 @@
 ﻿using System;
+using Library.Controllers;
 
 namespace library
 {
@@ -6,7 +7,11 @@ namespace library
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Clear();
+
+            new LibraryController().Run();
         }
     }
 }
