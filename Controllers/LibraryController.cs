@@ -62,7 +62,13 @@ namespace Library.Controllers
 
         private void Read()
         {
-
+            Console.WriteLine(_Service.GetBooks(true));
+            Console.Write("Enter the nuber of the book to get description:");
+            string inputStr = Console.ReadLine();
+            if (int.TryParse(inputStr, out int index) && index > 0)
+            {
+                Console.WriteLine(_Service.Read(index - 1));
+            }
         }
 
         private void Checkout()

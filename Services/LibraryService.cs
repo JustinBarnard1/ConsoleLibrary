@@ -68,8 +68,6 @@ namespace Library.Services
             Books.RemoveAt(index);
         }
 
-
-
         public LibraryService()
         {
             Books = new List<Book>(){
@@ -78,6 +76,11 @@ namespace Library.Services
                 new Book("Fake Book 3", "Fake Author 3", "Fake Desc 3"),
                 new Book("Fake Book 4", "Fake Author 4", "Fake Desc 4"),
             };
+        }
+
+        internal string Read(int index)
+        {
+            return Books[index].Description;
         }
     }
 }
