@@ -10,14 +10,16 @@ namespace Library.Services
 
         public string GetBooks(bool available)
         {
-            string list = "";
-            for (int i = 0; i < Books.Count; i++)
+            var books = Books.FindAll(b => b.IsAvailable == available);
+            if (books.Count == 0)
             {
-                var book = Books[i];
-                if (book.IsAvailable == available)
-                {
-                    list += $"{i + 1}. {book.Title} - by: {book.Author}\n";
-                }
+                return "No Books Available";
+            }
+            string list = available ? "Books to Checkout\n" : "Books to Return\n";
+            for (int i = 0; i < books.Count; i++)
+            {
+                Book book = Books[i];
+                list += $"{i + 1}. {book.Title} - by: {book.Author}\n";
             }
             return list;
         }
