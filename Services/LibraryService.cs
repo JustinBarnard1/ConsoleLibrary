@@ -67,6 +67,10 @@ namespace Library.Services
         {
             Books.RemoveAt(index);
         }
+        internal string Read(int index)
+        {
+            return Books[index].Description;
+        }
 
         public LibraryService()
         {
@@ -78,9 +82,5 @@ namespace Library.Services
             };
         }
 
-        internal string Read(int index)
-        {
-            return Books[index].Description;
-        }
     }
 }
